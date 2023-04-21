@@ -1,0 +1,27 @@
+// binomial coefficient nCr= n!/ r! *(n-r)!
+import java.util.*;
+
+public class bioCoeff {
+    public static int fact (int num){
+        int fact=1;
+        for(int i=num; i>1; i--){
+            fact = fact * i;
+        }
+        return fact;
+
+    }
+    public static void bino(int n, int r,int factr, int factn){
+        int bino= (factn/(factr*fact(n-r)));
+        System.out.println("The binomial coefficient is "+bino);
+    }
+    public static void main(String srgs[])
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter n and r to find binomial coeff.");
+        int n = sc.nextInt();
+        int r = sc.nextInt();
+
+        bino(n, r,fact(r),fact(n));
+        
+    }
+}
